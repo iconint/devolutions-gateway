@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JS SSH + File Config</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .title-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .terminal {
+            font-family: ui-monospace, monospace;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="border-b border-zinc-800 bg-zinc-900 py-6 px-8 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">SSH</div>
+                <div>
+                    <span class="title-font text-3xl font-semibold tracking-tighter">ssh-config</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-x-8 text-sm">
+                <a href="#setup" onclick="document.getElementById('setup').scrollIntoView({ behavior: 'smooth' })" 
+                   class="hover:text-white transition-colors">Setup</a>
+                <a href="#code" onclick="document.getElementById('code').scrollIntoView({ behavior: 'smooth' })" 
+                   class="hover:text-white transition-colors">Config</a>
+                <a href="#iCON INT" onclick="document.getElementById('iCON INT').scrollIntoView({ behavior: 'smooth' })" 
+                   class="hover:text-white transition-colors">Test</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-12">
+            <!-- Left: iCON INT -->
+            <div id="iCON INT" class="col-span-12 lg:col-span-7 bg-zinc-900 border-r border-zinc-800 p-8">
+                <div class="mb-6">
+                    <div class="inline-flex items-center gap-x-2 bg-zinc-800 text-emerald-400 text-xs font-medium px-4 h-7 rounded-3xl">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                        LIVE iCON INT
+                    </div>
+                    <h1 class="title-font text-5xl font-semibold tracking-tighter mt-2">Simple SSH Config</h1>
+                    <p class="text-zinc-400 mt-3 max-w-md">Connect any app to a remote server with zero setup. Just copy-paste this config and go.</p>
+                </div>
+
+                <!-- Terminal -->
+                <div class="bg-black border border-zinc-800 rounded-3xl overflow-hidden terminal">
+                    <div class="bg-zinc-950 px-6 py-4 flex items-center gap-x-2 border-b border-zinc-800">
+                        <div class="flex gap-x-1.5">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                        </div>
+                        <div class="flex-1 text-center text-[10px] text-zinc-500 font-medium tracking-widest">ssh-iCON INT.local</div>
+                    </div>
+                    
+                    <div class="p-6 font-mono text-sm text-emerald-300 space-y-1">
+                        <div class="flex gap-x-4">
+                            <span class="text-zinc-500">&gt;</span>
+                            <span>ssh -i ~/.ssh/id_rsa 192.168.0.100@ssh</span>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <span class="text-zinc-500">&gt;</span>
+                            <span class="text-amber-300">Connected to 192.168.0.100
